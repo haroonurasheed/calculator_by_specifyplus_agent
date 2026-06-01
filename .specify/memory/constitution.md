@@ -1,55 +1,120 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+For a **Calculator Spec Kit project**, your constitution should focus on **accuracy, simplicity, testability, maintainability, and user experience**.
+
+# Calculator Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Accuracy First
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+All calculations must produce mathematically correct and predictable results.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+* Calculation logic must be deterministic.
+* Results must be consistent across all supported platforms.
+* Floating-point limitations must be documented and handled appropriately.
+* No feature may compromise calculation accuracy for convenience.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### II. Simplicity Over Complexity
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+The calculator shall remain easy to understand, maintain, and extend.
 
-### [PRINCIPLE_6_NAME]
+* Prefer simple algorithms over complex abstractions.
+* Avoid premature optimization.
+* Features must have a clear business or user requirement.
+* Follow the YAGNI (You Aren't Gonna Need It) principle.
 
+### III. Test-Driven Development (Non-Negotiable)
 
-[PRINCIPLE__DESCRIPTION]
+Every calculation feature must be validated through automated tests before implementation.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+* Unit tests are required for all mathematical operations.
+* Edge cases must be covered.
+* Bug fixes must include regression tests.
+* New functionality must not reduce existing test coverage.
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+### IV. User-Centered Experience
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+Calculator interactions must be intuitive and predictable.
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+* Inputs should provide clear validation feedback.
+* Error messages must be actionable and understandable.
+* User workflows should minimize unnecessary steps.
+* Results should be displayed in a readable format.
+
+### V. Reliability & Stability
+
+The application must remain dependable under normal and unexpected usage.
+
+* Invalid inputs must be handled gracefully.
+* No calculation should cause application crashes.
+* Error handling must be consistent throughout the system.
+* System behavior must remain predictable under edge conditions.
+
+### VI. Maintainability & Extensibility
+
+Code should be organized to support future enhancements.
+
+* Business logic must be separated from presentation layers.
+* Reusable components should be preferred.
+* Clear documentation is required for complex calculations.
+* New calculation modules should integrate without affecting existing functionality.
+
+## Technical Standards
+
+### Technology Requirements
+
+* Use TypeScript or strongly typed languages where possible.
+* Follow consistent coding standards and linting rules.
+* Maintain a modular architecture.
+* All dependencies must have a justified purpose.
+
+### Performance Requirements
+
+* Standard calculations should execute instantly from a user's perspective.
+* Avoid unnecessary re-renders and computations.
+* Optimize only when measurable performance issues exist.
+
+### Security Requirements
+
+* Validate all user inputs.
+* Prevent code injection through input fields.
+* Never trust client-side validation alone.
+* Sensitive data must not be logged.
+
+## Development Workflow
+
+### Feature Development Process
+
+1. Define requirements.
+2. Write test cases.
+3. Review expected outputs.
+4. Implement functionality.
+5. Verify all tests pass.
+6. Conduct code review.
+7. Update documentation.
+
+### Quality Gates
+
+Before merging any feature:
+
+* All tests must pass.
+* No critical linting issues.
+* No decrease in test coverage.
+* Documentation updated when applicable.
+* Manual verification completed for user-facing changes.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution governs all calculator project decisions and supersedes conflicting development practices.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+Any amendment must:
+
+1. Include written justification.
+2. Document migration impacts.
+3. Maintain backward compatibility when possible.
+4. Be approved by project maintainers.
+
+All pull requests and reviews must verify compliance with this constitution.
+
+**Version**: 1.0.0
+**Ratified**: 2026-06-02
+**Last Amended**: 2026-06-02
