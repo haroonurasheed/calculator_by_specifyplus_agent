@@ -41,7 +41,7 @@ src/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/python-calculator.git
+git clone https://github.com/haroonurasheed/calculator_by_specifyplus_agent.git
 cd python-calculator
 ```
 
